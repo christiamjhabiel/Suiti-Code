@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Suiti Code</title>
+  
+  <link rel="stylesheet" href="./styles/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <script src="https://unpkg.com/three@0.140.0/build/three.min.js"></script>
+
+  <script src="https://unpkg.com/blockly/blockly_compressed.js"></script>
+  <script src="https://unpkg.com/blockly/blocks_compressed.js"></script>
+<script src="https://unpkg.com/blockly/javascript_compressed.js"></script>
+  <script src="https://unpkg.com/blockly/msg/es.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.140.2/examples/js/controls/OrbitControls.js"></script>
+</head>
+<body>
+  
+  <img id="logo" src="./assets/imgs/icon.png" alt="icon" class="logo"/>
+  <script>
+document.getElementById('logo').addEventListener('click', function() {
+  window.location.href = 'index-01.html';
+});
+</script>
+  <button onclick="run_code()" class="play-button">🚩</button>
+  <button onclick="stop_code()" class="stop-button">🛑</button>
+  <button onclick="more" class="more-button">•••</button>
+  <div class="more-window" id="more-window">
+    <h1 style="margin: auto;">more</h1>
+    <p>desarrollado por christiam jhabiel, o spacesxd.</p>
+  </div>
+  <canvas style="width: 330px; height: 230px;" class="canvas" id="canvas"></canvas>
+  
+  <div class="blocklyDiv" id="blocklyDiv" style="width: 95vw; height: 55vh;"></div>
+  
+  <xml id="toolbox" style="display: none">
+    
+  <category name="Eventos" colour="180">
+    <block type="al_iniciar">
+    </block>
+  </category>
+  
+  <category name="Logica" colour="%{BKY_LOGIC_HUE}">
+    <block type="controls_if"></block>
+    <block type="logic_compare"></block>
+    <block type="logic_boolean"></block>
+    <block type="text"></block>
+  </category>
+  
+  <category name="Loops" colour="%{BKY_LOOPS_HUE}">
+    <block type="controls_repeat_ext"></block>
+    <block type="controls_whileUntil"></block>
+    <block type="forever"></block>
+  </category>
+  
+  <category name="Matematica" colour="%{BKY_MATH_HUE}">
+    <block type="math_number"></block>
+    <block type="math_arithmetic"></block>
+  </category>
+  
+  <category name="Objetos" colour="0">
+      <block type="crear_obj"></block>
+      <block type="cambiar_eje"></block>
+    </category>
+    
+  <category name="Variables" custom="VARIABLE" colour="330"></category>
+  </xml>
+
+  <script src="./scripts/engine/engine.js"></script>
+  <script src="./scripts/objects/objects.js"></script>
+  <script src="./scripts/blocks/scratch-blocks.js"></script>
+</body>
+</html>
