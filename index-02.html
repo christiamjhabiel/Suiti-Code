@@ -1,9 +1,11 @@
+<!-- Hecho y Editado por Spacesxd :D (index poco comentado)-->
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
   <title>Suiti Code</title>
-  
+  <!-- librerias -->
   <link rel="stylesheet" href="./styles/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   
@@ -11,13 +13,13 @@
 
   <script src="https://unpkg.com/blockly/blockly_compressed.js"></script>
   <script src="https://unpkg.com/blockly/blocks_compressed.js"></script>
-<script src="https://unpkg.com/blockly/javascript_compressed.js"></script>
+  <script src="https://unpkg.com/blockly/javascript_compressed.js"></script>
   <script src="https://unpkg.com/blockly/msg/es.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/three@0.140.2/examples/js/controls/OrbitControls.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.140.2/examples/js/controls/OrbitControls.js"></script>
 </head>
 <body>
-  
-  <img id="logo" src="./assets/imgs/icon.png" alt="icon" class="logo"/>
+  <!-- diseño principal -->
+  <img id="logo" src="./icon.png" alt="icon" class="logo"/>
   <script>
 document.getElementById('logo').addEventListener('click', function() {
   window.location.href = 'index-01.html';
@@ -33,6 +35,8 @@ document.getElementById('logo').addEventListener('click', function() {
   <canvas style="width: 330px; height: 230px;" class="canvas" id="canvas"></canvas>
   
   <div class="blocklyDiv" id="blocklyDiv" style="width: 95vw; height: 55vh;"></div>
+
+  <!-- aca las categorías y bloques-->
   
   <xml id="toolbox" style="display: none">
     
