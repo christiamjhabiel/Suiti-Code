@@ -1,12 +1,17 @@
-const objectList = {};
+/* codigo hecho y editado por spacesxd */
 
+const objectList = {}; //lista de objetos
+
+// un if/else poco profesional que esta pa apañar un rato
 function crearObjeto(tipo, nombre){
   if(tipo == "cubo"){
-    crearCubo(nombre);
+    crearCubo(nombre);//facil, si resibe cubo es cubo si es cono es cono xd
   }else if(tipo == "cono"){
     crearCono(nombre);
   }
 }
+
+// FUNCIONES PARA CREAR PUTOS OBJETOS 🗿
 
 function crearCubo(name){
   if (objectList[name]) {
