@@ -1,3 +1,6 @@
+//ya me canse de poner esta webada ya ssben que esta mrd la hize yo
+
+//configuramos los legos 🗣️
 const workspace = Blockly.inject('blocklyDiv', {
   toolbox: document.getElementById('toolbox'),
   renderer: 'zelos',
@@ -16,9 +19,11 @@ const workspace = Blockly.inject('blocklyDiv', {
   },
 });
 
+//definimos los bloques con json pq soy un vago xd.
+//se me complica la manera "normal"
 Blockly.defineBlocksWithJsonArray([
   {
-    "type": "crear_obj",
+    "type": "crear_obj",//el bloque de crear un clásico
     "message0": "crear %1 con id : %2",
     "args0": [
       { 
@@ -37,20 +42,20 @@ Blockly.defineBlocksWithJsonArray([
     "colour": 1
   },
   {
-    "type": "al_iniciar",
+    "type": "al_iniciar",//un bloque de cabezera que hice por hacer
     "message0": "Al iniciar el juego",
     "nextStatement": null,
     "colour": 180
   },
   {
-    "type": "cambiar_eje",
+    "type": "cambiar_eje",//para cambiar las coords (x, y, z)
     "message0": "cambiar %1 de %2 para %3",
     "args0":[
       {
         "type": "field_dropdown",
         "name": "eje_a_cambiar",
         "options" : [
-          ["x", "x"],
+          ["x", "x"],//los ejes xd
           ["y", "y"],
           ["z", "z"]
         ]
@@ -70,7 +75,7 @@ Blockly.defineBlocksWithJsonArray([
     "nextStatement": true,
     "colour": 1
   },{
-  "type": "forever",
+  "type": "forever",// un bucle indispensable xd
   "message0": "por siempre %1 %2",
   "args0": [
     {
@@ -99,6 +104,16 @@ Blockly.defineBlocksWithJsonArray([
 }
 ]);
 
+//ACA PROGRAMAMOS LOS BLOQUES
+/* dato curioso: 
+este bloque de forever antes era un while(true),
+para los que saben eso daba pesimo rendimiento,
+lo cambie por una funcion con requestFrame.
+
+Luego de eso no podias poner dos forever porque,
+se creaban dos funciones iguales asi que,
+les puse un id random al crear un bucle(ej: function loop_random();)
+*/
 javascript.javascriptGenerator.forBlock['forever'] = function(block, generator) {
   javascript.javascriptGenerator.forBlock['forever'].counter = 
     (javascript.javascriptGenerator.forBlock['forever'].counter || 0) + 1;
@@ -115,12 +130,15 @@ javascript.javascriptGenerator.forBlock['forever'] = function(block, generator) 
   `;
 };
 
+//el bloque de crear xd(todas estas funciones son de objects)
+
 javascript.javascriptGenerator.forBlock['crear_obj'] = function(block, generator) {
   const type = block.getFieldValue('create_type');
   const id = generator.valueToCode(block, 'id_obj', generator.ORDER_ATOMIC) || '"default"';
   return `crearObjeto("${type}", ${id});\n`; 
 };
 
+//la cabezera q puse por poner
 javascript.javascriptGenerator.forBlock['al_iniciar'] = function(block, generator) {
   const codigoSiguiente = generator.statementToCode(block, 'SUBSTACK');
   
@@ -133,7 +151,7 @@ javascript.javascriptGenerator.forBlock['al_iniciar'] = function(block, generato
 
   return `// --- Inicio del Juego ---\n${declaraciones}${codigoSiguiente}`;
 };
-
+//sistema de variables, no lo hize yo para que matarte si blockly tiene uno.
 javascript.javascriptGenerator.forBlock['variables_get'] = function(block, generator) {
   
   const variableName = block.getFieldValue('VAR');
@@ -155,10 +173,10 @@ javascript.javascriptGenerator.forBlock['cambiar_eje'] = function(block, generat
   
   return `objectList["${obj}"].position.${eje} += ${valor};\n`;
 }
-
+//funciones de los botones para play & stop
 function run_code(){
   let code = javascript.javascriptGenerator.workspaceToCode(workspace);
-  console.log(code);
+  eval(code);
 }
 
 function stop_code(){
