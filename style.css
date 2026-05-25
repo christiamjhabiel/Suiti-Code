@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+html {
+  font-family: "Montserrat", sans-serif;
+  background: linear-gradient(#3743B9, #4988B9);
+}
+/*
+Aca el Logo y canvas. Este es el frontend ps.
+*/
+.logo {
+  width: 180px;
+  height: 50px;
+  position: relative;
+  left:0px;
+}
+
+.canvas {
+  border-radius: 10px;
+}
+
+.blocklyDiv   {
+  border-radius: 10px;
+}
+
+.play-button {
+  position: relative;
+  left: 10px;
+  top: -20px;
+  background: linear-gradient(#44A63D, #46DB3C);
+  border-color: #3A7835;
+  border-radius: 50px;
+  width: 45px;
+}
+.stop-button {
+  position: relative;
+  left: 10px;
+  top: -20px;
+  background: linear-gradient(#E92F2F, #9A2525);
+  border-color: #641818;
+  border-radius: 50px;
+  width: 45px;
+}
+.more-button {
+  color: #FFFFFF;
+  position: relative;
+  left: 10px;
+  top: -20px;
+  background: linear-gradient(#383851, #4E5287);
+  border-color: #052453;
+  border-radius: 50px;
+  width: 45px;
+}
+
+.more-window {
+  background: linear-gradient(#5569A5, #5260A2);
+  border-radius: 13px;
+  border-style: double;
+  border-color: #3A4158;
+  color: #FFFFFF;
+  display: none;
+}
